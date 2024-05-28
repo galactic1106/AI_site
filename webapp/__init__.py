@@ -1,3 +1,4 @@
+from pydoc import visiblename
 from flask import Flask, app
 import os
 from flask.templating import *
@@ -19,15 +20,10 @@ def create_app():
     # Update any base URLs to use the public ngrok URL
     app.config["BASE_URL"] = public_url
 
-    # ... Update inbound traffic via APIs to use the public-facing ngrok URL
+    from .index import index
 
-
-    # Define Flask routes
-    @app.route("/")
-    def index():
-        return "<h1>Hello from Colab!</h1>"
-    
-    
+    app.register_blueprint(index, url_prefix='/')
+        
     return app
     
 
