@@ -10,5 +10,5 @@ if __name__=='__main__':
     on_colab=False
     if on_colab:
         threading.Thread(target=app.run, kwargs={"use_reloader": False}).start()
-    else
+    else:
         app.run()
