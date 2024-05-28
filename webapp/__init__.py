@@ -1,4 +1,3 @@
-from pydoc import visiblename
 from flask import Flask, app
 import os
 from flask.templating import *
@@ -11,7 +10,6 @@ def create_app():
 
     port = "5000"
 
-
     render_template_string
     # Open a ngrok tunnel to the HTTP server
     public_url = ngrok.connect(port).public_url
@@ -22,8 +20,6 @@ def create_app():
 
     from .index import index
 
-    app.register_blueprint(index, url_prefix='/')
-        
-    return app
-    
+    app.register_blueprint(index, url_prefix="/")
 
+    return app

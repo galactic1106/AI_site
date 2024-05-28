@@ -1,6 +1,5 @@
 import torch  # allows Tensor computation with strong GPU acceleration
 from transformers import pipeline  # fast way to use pre-trained models for inference
-import os
 
 
 # define helper function
