@@ -1,4 +1,5 @@
-from flask import Blueprint, render_template
+from crypt import methods
+from flask import Blueprint, render_template, request
 
 index = Blueprint('index',__name__)
 
@@ -7,8 +8,10 @@ index = Blueprint('index',__name__)
 def home():
     return render_template('index.html')
 
-@index.route('/gpt-2')
+@index.route('/gpt-2', methods=['GET','POST'])
 def gpt_2():
+    data= request.form
+    data.get()
     return render_template('gpt-2.html')
 
 @index.route('/dolly-3b')
