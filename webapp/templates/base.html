@@ -16,8 +16,42 @@
 
 <body data-bs-theme="dark">
     <!--TODO: inserire una navbar-->
-    <h1>navbar</h1>
-    
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <img src="https://www.aicorporation.com/wp-content/uploads/2019/02/ai-logo-blue-button-large-2015.png"
+                    alt="img. azienda" width="33px" height="33px" id="imgAzienda">
+                <a class="navbar-brand" href="#">AI Corporation</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./guida.html">Guida</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                                Prodotti
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="./dolly-3b">Dolly AI</a></li>
+                                <li><a class="dropdown-item" href="./gpt-2">GPT-2</a></li>
+                                <li><a class="dropdown-item" href="./stable-diffusion">Stable Diffusion</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
     {% block body %}this is the body{% endblock %}
 
     <!--script 

@@ -14,3 +14,7 @@ def gpt_2():
 @index.route('/dolly-3b')
 def dolly_3b():
     return render_template('dolly-3b.html')
+
+@index.route('/stable-diffusion')
+def stable_diffusion():
+    return render_template('stable-diffusion.html')
