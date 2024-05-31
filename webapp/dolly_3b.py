@@ -15,16 +15,13 @@ def get_completion_dolly(input):
     return dolly_response[0]["generated_text"]
 
 
-if __name__ == "__main__":
+def prompt_dolly_3b(prompt):
     dolly_pipeline = dolly_pipeline = pipeline(
         model="databricks/dolly-v2-3b",
         torch_dtype=torch.bfloat16,
         trust_remote_code=True,
         device_map="auto",
     )
-
-    while True:
-        # let's prompt
-        prompt = input("prompt:>")
-        # prompt = "Why is the Sky blue?"
-        print(get_completion_dolly(prompt))
+    # let's prompt
+    # prompt = "Why is the Sky blue?"
+    return get_completion_dolly(prompt)
