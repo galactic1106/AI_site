@@ -8,10 +8,8 @@ index = Blueprint('index',__name__)
 def home():
     return render_template('index.html')
 
-@index.route('/gpt-2', methods=['GET','POST'])
+@index.route('/gpt-2')
 def gpt_2():
-    data= request.form
-    data.get()
     return render_template('gpt-2.html')
 
 @index.route('/dolly-3b')
