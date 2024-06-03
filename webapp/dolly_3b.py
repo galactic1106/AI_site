@@ -2,9 +2,8 @@ import torch  # allows Tensor computation with strong GPU acceleration
 from transformers import pipeline  # fast way to use pre-trained models for inference
 
 
-
 def prompt_dolly_3b(prompt):
-    
+
     # define helper function
     def get_completion_dolly(input):
         system = f"""
@@ -16,8 +15,6 @@ def prompt_dolly_3b(prompt):
         print(prompt)
         dolly_response = dolly_pipeline(prompt, max_new_tokens=500)
         return dolly_response[0]["generated_text"]
-    
-
 
     dolly_pipeline = dolly_pipeline = pipeline(
         model="databricks/dolly-v2-3b",
@@ -27,6 +24,6 @@ def prompt_dolly_3b(prompt):
     )
     # let's prompt
     # prompt = "Why is the Sky blue?"
-    response=get_completion_dolly(prompt)
+    response = get_completion_dolly(prompt)
     print(response)
     return response
