@@ -6,21 +6,24 @@
 <div class="row w-100 mb-3">
 	<div class="col-2"></div>
 
-	<div class="col-8 bg-body-secondary rounded-4 px-0 py-4 d-flex flex-column">
-		<!--div class="d-flex flex-row justify-content-end mb-3">
-            <div class="p-3 py-2 bg-info rounded-start-4 text-black text-end text-wrap text-break" style="max-width: 70%;">
-                <h5>User</h5>
-                <span>{prompt}</span>
-            </div>
-        </!--div>
+	<div class="col-8 bg-body-secondary rounded-4 px-0 py-4 d-flex flex-column" id="conversation-box">
+		{% conversation_array=conversation.split %}
+		{% for i in range(0,len(conversation_array),2) %}
+		<div class="d-flex flex-row justify-content-end mb-3">
+			<div class="p-3 py-2 bg-info rounded-start-4 text-black text-end text-wrap text-break"
+				style="max-width: 70%;">
+				<h5>User</h5>
+				<span>{% conversation_array[i] %}</span>
+			</div>
+		</div>
 
-        <div-- class="d-flex flex-row justify-content-start mb-3">
-            <div class="p-3 py-2 bg-info-subtle rounded-end-4 text-start text-wrap text-break" style="max-width: 70%;">
-                <h5>Dolly 3b</h5>
-                <span>{AI_response}</span>
-            </div>
-        </div-->
-		{{conversation_html}}
+		<div class="d-flex flex-row justify-content-start mb-3">
+			<div class="p-3 py-2 bg-info-subtle rounded-end-4 text-start text-wrap text-break" style="max-width: 70%;">
+				<h5>Dolly 3b</h5>
+				<span>{% conversation_array[i+1] %}</span>
+			</div>
+		</div>
+		{% endfor %}
 	</div>
 	<div class="col-2"></div>
 </div>
