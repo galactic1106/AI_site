@@ -5,21 +5,23 @@ from pyngrok import ngrok
 
 
 def create_app():
-    app = Flask(__name__)
-    # app.config['SECRET_KEY']=''  #chiave per la codifica dell'app
+	app = Flask(__name__)
+	run_with_ngrok=False
 
-    port = "5000"
+	if run_with_ngrok:			
+		# app.config['SECRET_KEY']=''  #chiave per la codifica dell'app
 
-    render_template_string
-    # Open a ngrok tunnel to the HTTP server
-    public_url = ngrok.connect(port).public_url
-    print(f' * ngrok tunnel "{public_url}" -> "http://127.0.0.1:{port}"')
+		port = "5000"
 
-    # Update any base URLs to use the public ngrok URL
-    app.config["BASE_URL"] = public_url
+		# Open a ngrok tunnel to the HTTP server
+		public_url = ngrok.connect(port).public_url
+		print(f' * ngrok tunnel "{public_url}" -> "http://127.0.0.1:{port}"')
 
-    from .index import index
+		# Update any base URLs to use the public ngrok URL
+		app.config["BASE_URL"] = public_url
 
-    app.register_blueprint(index, url_prefix="/")
+	from .index import index
 
-    return app
+	app.register_blueprint(index, url_prefix="/")
+
+	return app
