@@ -2,25 +2,70 @@
 {% block title %}Guida{% endblock %}
 {% block body %}
 
-<div class="row">
-    <div class="col-4">
+<div class="row my-4 mx-4">
+    <div class="col-4 ">
       <div id="list-example" class="list-group">
-        <a class="list-group-item list-group-item-action" href="#list-item-1">Item 1</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-2">Item 2</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-3">Item 3</a>
-        <a class="list-group-item list-group-item-action" href="#list-item-4">Item 4</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-1">Dolly 3B AI</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-2">GPT-2</a>
+        <a class="list-group-item list-group-item-action" href="#list-item-3">Stable Diffusion</a>
       </div>
     </div>
     <div class="col-8">
       <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-smooth-scroll="true" class="scrollspy-example" tabindex="0">
-        <h4 id="list-item-1">Item 1</h4>
-        <p>...</p>
-        <h4 id="list-item-2">Item 2</h4>
-        <p>...</p>
-        <h4 id="list-item-3">Item 3</h4>
-        <p>...</p>
-        <h4 id="list-item-4">Item 4</h4>
-        <p>...</p>
+        <h4 id="list-item-1">Dolly 3B AI</h4>
+        <img src="https://www.graphable.ai/wp-content/uploads/2023/12/linkedin.jpg" class="img-fluid m-2" alt="img dolly-3b">
+        <p>
+            Dolly 3B è un modello di linguaggio avanzato creato da Databricks, un’azienda specializzata in soluzioni di analisi dei dati e intelligenza artificiale. Questo modello è stato progettato per comprendere e generare testo in modo coerente e intelligente. Ora, immergiamoci nei dettagli! <br>
+        </p>
+
+        <ul>
+            <li><strong>Origini e Architettura</strong><br></li>
+            <strong>Origini:</strong> Dolly 3B deriva da Pythia-2.8b, un modello di linguaggio sviluppato da EleutherAI, una comunità di ricerca open source. EleutherAI si concentra sulla creazione di modelli di linguaggio avanzati e accessibili a tutti. <br>
+            <strong>Architettura:</strong> Dolly 3B è basato su un’architettura di trasformatori. I trasformatori sono reti neurali profonde che hanno rivoluzionato il campo del NLP (Natural Language Processing). Utilizzano l’attenzione multi-testa per catturare relazioni semantiche complesse nei testi.
+            <li><strong>Parametri e Fine-Tuning</strong><br></li>
+            <strong>Parametri:</strong> Dolly 3B ha 2,8 miliardi di parametri. Questo numero elevato di parametri consente al modello di apprendere rappresentazioni linguistiche più ricche e complesse. <br>
+            <strong>Fine-Tuning:</strong> Dopo aver creato Dolly 3B, i ricercatori di Databricks hanno eseguito un processo di fine-tuning. Hanno addestrato il modello su un corpus di istruzioni, che consisteva in circa 15.000 record generati da dipendenti di Databricks. Questo processo ha permesso a Dolly 3B di adattarsi meglio a compiti specifici e di produrre risultati più accurati. <br>
+            <li><strong></strong>Utilizzo e Licenza</strong><br></li>
+            <strong>Utilizzo:</strong> Dolly 3B può essere utilizzato per una varietà di compiti, tra cui generazione di testo, completamento automatico, traduzione e risposte alle domande. Le sue capacità sono impressionanti e possono essere sfruttate in molti scenari. <br>
+            <strong>Licenza:</strong> Databricks ha rilasciato Dolly 3B con una licenza permissiva (CC-BY-SA), il che significa che può essere utilizzato gratuitamente, anche a scopi commerciali. Questo è un grande vantaggio per la comunità di ricerca e gli sviluppatori. <br>
+            <li><strong>Esempi di Utilizzo</strong><br></li>
+            <strong>Generazione di Testo:</strong> Dolly 3B può scrivere articoli, storie, poesie e altro ancora. Ad esempio, potrebbe creare una poesia come questa:
+            Nel silenzio della notte, le stelle danzano, i sogni si intrecciano, come fili di seta. Dolly 3B, la poetessa digitale, scrive versi che toccano l’anima. <br>
+            <strong>Assistenza alle Query:</strong> Se hai una domanda, chiedi pure! Dolly 3B farà del suo meglio per rispondere in modo intelligente e informativo.<br>
+            In sintesi, Dolly 3B è un’aggiunta eccitante al mondo dell’intelligenza artificiale e offre opportunità creative e pratiche per chiunque lo utilizzi. 
+        </ul>
+        
+        <h4 id="list-item-2">GPT-2</h4>
+        <img src="https://miro.medium.com/v2/resize:fit:800/1*zK01J0NIheH6t_PbQ023VA.png" class="img-fluid m-2" alt="img GPT-2">
+        <p>
+            GPT-2, sviluppato da OpenAI, è un modello di linguaggio basato sull’architettura Transformer, introdotto nel 2019. È stato un passo significativo nel campo dell’intelligenza artificiale per la sua capacità di generare testi coerenti e realistici, tanto da essere considerato “troppo pericoloso” al momento del suo rilascio.
+            <br><br>
+            Ecco alcuni dettagli chiave su GPT-2:
+        </p>
+        <ul>
+            <li><strong>Dimensioni:</strong> Disponibile in diverse versioni, con il modello più grande che conta 1,5 miliardi di parametri.</li>
+            <li><strong>Vocabolario:</strong> Utilizza un vocabolario limitato di 50.257 voci.</li>
+            <li><strong>Architettura:</strong> Si basa sull’architettura Transformer, che consente di elaborare sequenze di testo lunghe in modo efficiente, catturando relazioni a lungo raggio tra i termini.</li>
+            <li><strong>Influenza:</strong> Nonostante sia stato superato da modelli successivi come GPT-3 e GPT-4, GPT-2 ha introdotto caratteristiche distintive mantenute anche nei modelli più avanzati.</li>
+        </ul>
+        <p>
+            GPT-2 è stato un modello fondamentale per dimostrare le tecniche di addestramento più efficaci ed efficienti nell’IA e continua ad essere un punto di riferimento storico nel campo.
+        </p>
+        <h4 id="list-item-3">Stable Diffusion</h4>
+        <img src="https://images.squarespace-cdn.com/content/v1/6213c340453c3f502425776e/c24904d4-f0f0-4a26-9470-fec227dde15c/image-90.png" class="img-fluid m-2" alt="img stable-diffusion">
+        <p>
+            Stable Diffusion è un modello di intelligenza artificiale generativa open source rilasciato nel 2022, utilizzato principalmente per generare immagini dettagliate a partire da descrizioni di testo. È noto per la sua flessibilità e per essere gratuito, permettendo agli utenti di creare modelli personalizzati o di utilizzare quelli esistenti. Ecco alcuni dettagli chiave:
+        </p>
+        <ul>
+            <li><strong>Open Source:</strong>Stable Diffusion è un progetto open source che può essere installato localmente sulla propria macchina</li>
+            <li><strong>Gratuito: </strong>Non ci sono costi per l’utilizzo di Stable Diffusion, rendendolo accessibile a un vasto pubblico</li>
+            <li><strong>Personalizzabile: </strong>Gli utenti possono creare i propri modelli o utilizzare quelli creati da altri, e il sistema è altamente personalizzabile grazie all’installazione di plugin</li>
+            <li><strong>Generazione di Immagini: </strong>Permette di generare immagini di qualsiasi tipo senza censure, con l’unica limitazione data dall’hardware disponibile</li>
+            <li><strong>Diffusione Latente: </strong>Utilizza una tecnica nota come modello di diffusione latente (LDM, Latent Diffusion Model), che è una classe di modelli di deep learning caratterizzati da una matematica che assomiglia alla diffusione in fisica</li>
+        </ul>
+        <p>
+            Stable Diffusion ha avuto un impatto significativo nel campo della generazione di immagini AI, offrendo una piattaforma potente e accessibile per la creazione di contenuti visivi.
+        </p>
       </div>
     </div>
   </div>
