@@ -7,4 +7,5 @@ nella cartella static vanno immagini, javascript, css...
 
 se runnate il sito su colab c'è la variabile on_colab nel main da settare a true
 
-comando per installare i moduli python:"pip install flask torch pyngrok prompt_toolkit transformers"
+comando per installare i moduli python:"pip install flask torch pyngrok"
+moduli per l'IA:"pip install prompt_toolkit transformers accelerate"

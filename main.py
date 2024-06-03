@@ -2,7 +2,6 @@
 #quando viene importata la directory che lo contiene 
 #verranno eseguite tutte funzioni contenute in esso 
 from webapp import create_app 
-import threading
 from webapp.dolly_3b import prompt_dolly_3b
 
 app = create_app()

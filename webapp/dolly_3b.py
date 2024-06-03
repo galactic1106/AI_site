@@ -27,4 +27,6 @@ def prompt_dolly_3b(prompt):
     )
     # let's prompt
     # prompt = "Why is the Sky blue?"
-    return get_completion_dolly(prompt)
+    response=get_completion_dolly(prompt)
+    print(response)
+    return response
