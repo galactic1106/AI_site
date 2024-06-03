@@ -1,6 +1,5 @@
 from flask import Blueprint, render_template, request
 from flask import *
-import prompt_toolkit
 from .dolly_3b import prompt_dolly_3b
 
 index = Blueprint("index", __name__)

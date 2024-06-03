@@ -1,5 +1,4 @@
-from flask import Flask, app
-import os
+from flask import Flask
 from flask.templating import *
 from pyngrok import ngrok
 

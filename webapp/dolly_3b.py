@@ -7,10 +7,10 @@ def prompt_dolly_3b(prompt):
     # define helper function
     def get_completion_dolly(input):
         system = f"""
-    You are an expert Physicist.
-    You are good at explaining Physics concepts in simple words.
-    Help as much as you can.
-    """
+		You are an expert Physicist.
+		You are good at explaining Physics concepts in simple words.
+		Help as much as you can.
+		"""
         prompt = f"#### System: {system}\n#### User: \n{input}\n\n#### Response from Dolly-v2-3b:"
         print(prompt)
         dolly_response = dolly_pipeline(prompt, max_new_tokens=500)
