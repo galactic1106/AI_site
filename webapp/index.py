@@ -19,23 +19,25 @@ def gpt_2():
 @index.route("/dolly-3b", methods=["GET", "POST"])
 def dolly_3b():
     AI_response = ""
-    q_a = [{"q": "question", "a": "answer"}]
+    q_a = []
     data = request.form
     prompt = data.get("prompt")
-
     # se non c'è un prompt
     if prompt == None:
         return render_template("dolly-3b.html", q_a=q_a)
     if len(prompt.strip()) < 0:
         return render_template("dolly-3b.html", q_a=q_a)
 
+
     AI_response = prompt_dolly_3b(data.get("prompt"))
     # AI_response = 'PLACEHOLDER'
-    q_a = eval(data.get("q_a"))
+    try: q_a = eval(data.get("q_a"))
+    except: q_a = []
+    
     q_a.append({"q": prompt, "a": AI_response})
-    for qa in q_a:
-        print(qa["q"])
-        print(qa["a"])
+#    for qa in q_a:
+#        print(qa["q"])
+#        print(qa["a"])
     return render_template("dolly-3b.html", q_a=q_a)
 
 
