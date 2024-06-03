@@ -6,12 +6,6 @@ from .dolly_3b import prompt_dolly_3b
 index = Blueprint("index", __name__)
 
 
-def format_conv(conversation):
-    out = ""
-    for msg in conversation:
-        out += msg + " "
-
-
 @index.route("/")
 def home():
     return render_template("index.html")
@@ -24,28 +18,25 @@ def gpt_2():
 
 @index.route("/dolly-3b", methods=["GET", "POST"])
 def dolly_3b():
-
     AI_response = ""
+    q_a = [{"q": "question", "a": "answer"}]
     data = request.form
     prompt = data.get("prompt")
 
     # se non c'è un prompt
     if prompt == None:
-        return render_template("dolly-3b.html")
+        return render_template("dolly-3b.html", q_a=q_a)
     if len(prompt.strip()) < 0:
-        return render_template("dolly-3b.html")
+        return render_template("dolly-3b.html", q_a=q_a)
 
     AI_response = prompt_dolly_3b(data.get("prompt"))
-    conversation = data.get("conversation")
-    if conversation == None:
-        conversation = ""
-    else:
-        conversation=conversation.split(' ')
-        for str in conversation:
-            if str.strip=='':
-                conversation.remove('')
-    
-    return render_template("dolly-3b.html", conversation=conversation)
+    # AI_response = 'PLACEHOLDER'
+    q_a = eval(data.get("q_a"))
+    q_a.append({"q": prompt, "a": AI_response})
+    for qa in q_a:
+        print(qa["q"])
+        print(qa["a"])
+    return render_template("dolly-3b.html", q_a=q_a)
 
 
 @index.route("/stable-diffusion")
