@@ -1,3 +1,4 @@
+from difflib import restore
 from aitextgen import aitextgen
 from aitextgen.TokenDataset import TokenDataset
 from aitextgen.tokenizers import train_tokenizer
@@ -20,4 +21,7 @@ def init_gpt_2():
 
 
 def prompt_gpt_2(ai, prompt):
-    return ai.generate(n=1, prompt=input( ),min_length=1000, max_length=2000)
+    print('prompt:'+ prompt)
+    response=ai.generate(n=1, prompt=input( ),min_length=1000, max_length=2000)
+    print('response:'+ response)
+    return response
