@@ -96,10 +96,9 @@ def stable_diffusion():
         return render_template("stable-diffusion.html")
 
     # /home/galactic1106/Documents/GitHub/AI_site/webapp/static/img/openart-image_Fj-iov5i_1716968070034_raw.jpg
-    # image = prompt_stable_diffusion(prompt=prompt)
-    image = Image.open(
-        "./webapp/static/img/openart-image_Fj-iov5i_1716968070034_raw.jpg"
-    )
+    image = prompt_stable_diffusion(prompt=prompt)
+    #image = Image.open("./webapp/static/img/openart-image_Fj-iov5i_1716968070034_raw.jpg")
+    
     path = "./webapp/static/img/saved_img/" + prompt + ".png"
     image.save(path)
     return render_template("stable-diffusion.html", image=prompt + ".png")
