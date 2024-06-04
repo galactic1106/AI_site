@@ -1,29 +1,24 @@
-from difflib import restore
-from aitextgen import aitextgen
-from aitextgen.TokenDataset import TokenDataset
-from aitextgen.tokenizers import train_tokenizer
-from aitextgen.utils import GPT2ConfigCPU
-import os
+import torch
+from transformers import GPT2LMHeadModel, GPT2Tokenizer
 
-os.environ['USER'] = 'Modified User'
+def prompt_gpt_2(prompt):
+    # Load pre-trained model and tokenizer
+    model_name = "gpt2"  # You can choose from 'gpt2', 'gpt2-medium', 'gpt2-large', 'gpt2-xl'
+    tokenizer = GPT2Tokenizer.from_pretrained(model_name)
+    model = GPT2LMHeadModel.from_pretrained(model_name)
 
-def init_gpt_2():
-    file_name = "./webapp/static/train_text/Answer.csv"
-    ai = aitextgen()
+    # Set the model to evaluation mode
+    model.eval()
 
-    tokenizer_file = "aitextgen.tokenizer.json"
-    train_tokenizer(file_name)
+    # Tokenize the input prompt
+    input_ids = tokenizer.encode(prompt, return_tensors='pt')
 
-    config = GPT2ConfigCPU()
+    # Generate text
+    with torch.no_grad():
+        output = model.generate(input_ids, max_length=100, num_return_sequences=1)
 
-    ai = aitextgen(tokenizer_file=tokenizer_file, config=config)
-    data = TokenDataset(file_name, tokenizer_file=tokenizer_file, block_size=64)
-    ai.train(data, batch_size=8, num_steps=30000, generate_every=3000, save_every=3000)
-    return ai
-
-
-def prompt_gpt_2(ai, prompt):
-    print('prompt:'+ prompt)
-    response=ai.generate(n=1, prompt=input( ),min_length=1000, max_length=2000)
-    print('response:'+ response)
-    return response
+    # Decode the generated text
+    generated_text = tokenizer.decode(output[0], skip_special_tokens=True)
+    print('-'*40+'\nprompt: '+prompt)
+    print('response: '+generated_text+'\n'+'-'*40)
+    return generated_text

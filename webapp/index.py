@@ -5,8 +5,7 @@ flag_gpt_2 = True
 flag_dolly_3b = False
 
 if flag_gpt_2:
-    from .gpt_2 import prompt_gpt_2, init_gpt_2
-    gpt_2_ai=init_gpt_2()
+    from .gpt_2 import prompt_gpt_2
 
 if flag_dolly_3b:
     from .dolly_3b import prompt_dolly_3b
@@ -36,7 +35,7 @@ def gpt_2():
     if len(prompt.strip()) < 0:
         return render_template("gpt-2.html", q_a=q_a)
 
-    AI_response = prompt_gpt_2(gpt_2_ai,data.get("prompt"))
+    AI_response = prompt_gpt_2(data.get("prompt"))
     # AI_response = 'PLACEHOLDER'
     try:
         q_a = eval(data.get("q_a"))
