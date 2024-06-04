@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Index{% endblock %}
 {% block body %}
+<!--
 <div id="carouselExampleCaptions" class="carousel slide col-9 mx-auto">
     <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
@@ -41,5 +42,49 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
+</div>-->
+<div class="row w-100">
+    <div class="col-2"></div>
+<div class="col-8">
+    <!--Card Dolly-->
+    <div class="card mb-3 my-2">
+        <img src="../static/img/openart-image_nsx1oiGT_1716968532588_raw.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">Dolly AI</h5>
+        <p class="card-text">La nostra prima AI generatrice di testo con cui puoi conversare</p>
+        <a class="btn btn-primary" href="/dolly-3b" role="button">Prova Dolly</a>
+        </div>
+    </div>
+    <!--Card GPT2-->
+    <div class="card mb-3  my-2">
+        <img src="../static/img/openart-image_gMgISjKH_1717490222675_raw.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">GPT-2</h5>
+        <p class="card-text">Conversa con il potentessimo e velocissimo modello OpenAI</p>
+        <a class="btn btn-primary" href="/gpt-2" role="button">Prova GPT2</a>
+        </div>
+    </div>
+    <!--Card Stable Diffusion-->
+    <div class="card mb-3  my-2">
+        <img src="../static/img/openart-image_Fj-iov5i_1716968070034_raw.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">Stable Diffusion</h5>
+        <p class="card-text">Il nostro modello generatrice di immagini più potente di sempre</p>
+        <a class="btn btn-primary" href="/stable-diffusion" role="button">Prova Stable Diffusion</a>
+        </div>
+    </div>
+    <!--Card Guida-->
+    <div class="card mb-3  my-2">
+        <img src="../static/img/openart-image_WEEev_od_1716968831626_raw.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+        <h5 class="card-title">Guida</h5>
+        <p class="card-text">Scopri i nostri prodotti con descizioni dettagliate</p>
+        <a class="btn btn-primary" href="/guida" role="button">Accedi alla guida</a>
+        </div>
+    </div>
 </div>
+
+<div class="col-2"></div>
+</div>
+
 {% endblock %}
