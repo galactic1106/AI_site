@@ -1,8 +1,10 @@
 from flask import Blueprint, render_template, request
 from flask import *
+from PIL import Image
 
-flag_gpt_2 = True
-flag_dolly_3b = True
+flag_gpt_2 = False
+flag_dolly_3b = False
+flag_stable_diffusion = False
 
 if flag_gpt_2:
     from .gpt_2 import prompt_gpt_2
@@ -11,7 +13,13 @@ if flag_gpt_2:
 
 if flag_dolly_3b:
     from .dolly_3b import prompt_dolly_3b
+
     prompt_dolly_3b("")
+
+if flag_stable_diffusion:
+    from .stable_diffusion import prompt_stable_diffusion
+
+    prompt_stable_diffusion("")
 
 index = Blueprint("index", __name__)
 
@@ -78,4 +86,19 @@ def dolly_3b():
 
 @index.route("/stable-diffusion", methods=["GET", "POST"])
 def stable_diffusion():
-    return render_template("stable-diffusion.html")
+    data = request.form
+    prompt = data.get("prompt")
+    # se non c'è un prompt
+    if prompt == None:
+        return render_template("stable-diffusion.html")
+    if len(prompt.strip()) < 0:
+        return render_template("stable-diffusion.html")
+
+    # /home/galactic1106/Documents/GitHub/AI_site/webapp/static/img/openart-image_Fj-iov5i_1716968070034_raw.jpg
+    # image = prompt_stable_diffusion(prompt=prompt)
+    image = Image.open(
+        "./webapp/static/img/openart-image_Fj-iov5i_1716968070034_raw.jpg"
+    )
+    path="./webapp/static/img/saved_img/"+prompt+'.png'
+    image.save(path)
+    return render_template("stable-diffusion.html", image=prompt+'.png')

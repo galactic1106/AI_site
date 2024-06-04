@@ -5,7 +5,7 @@ from pyngrok import ngrok
 
 def create_app():
 	app = Flask(__name__)
-	run_with_ngrok=True
+	run_with_ngrok=False
 
 	if run_with_ngrok:			
 		# app.config['SECRET_KEY']=''  #chiave per la codifica dell'app

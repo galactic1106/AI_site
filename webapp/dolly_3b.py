@@ -5,13 +5,13 @@ from transformers import pipeline  # fast way to use pre-trained models for infe
 def prompt_dolly_3b(prompt):
 
     # define helper function
-    def get_completion_dolly(input):
+    def get_completion_dolly(str_input):
         system = f"""
 		You are an expert Physicist.
 		You are good at explaining Physics concepts in simple words.
 		Help as much as you can.
 		"""
-        prompt = f"#### System: {system}\n#### User: \n{input}\n\n#### Response from Dolly-v2-3b:"
+        prompt = f"#### System: {system}\n#### User: \n{str_input}\n\n#### Response from Dolly-v2-3b:"
         #print(prompt)
         dolly_response = dolly_pipeline(prompt, max_new_tokens=500)
         return dolly_response[0]["generated_text"]
@@ -24,7 +24,8 @@ def prompt_dolly_3b(prompt):
     )
     # let's prompt
     # prompt = "Why is the Sky blue?"
+    print("-"*40+" DOLLY 3B "+"-"*40)
     response = get_completion_dolly(prompt)
-    print("-" * 40 + "\nprompt: " + input)
+    print("-" * 40 + "\nprompt: " + prompt)
     print("response: " + response + "\n" + "-" * 40)
     return response

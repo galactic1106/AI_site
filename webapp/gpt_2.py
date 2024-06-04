@@ -3,6 +3,7 @@ from transformers import AutoModelForCausalLM, AutoTokenizer
 
 
 def prompt_gpt_2(prompt):
+    print("-"*40+" GPT-2 "+"-"*40)
     # Load pre-trained model and tokenizer
     model_name = "microsoft/DialoGPT-medium"  # You can also use 'DialoGPT-small' or 'DialoGPT-large'
     tokenizer = AutoTokenizer.from_pretrained(model_name)
