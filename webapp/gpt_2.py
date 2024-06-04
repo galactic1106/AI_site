@@ -11,9 +11,6 @@ def prompt_gpt_2(prompt):
     # Set the model to evaluation mode
     model.eval()
 
-    # Define the initial conversation prompt
-    prompt = "Hello, how are you?"
-
     # Tokenize the input prompt
     input_ids = tokenizer.encode(prompt + tokenizer.eos_token, return_tensors="pt")
 
