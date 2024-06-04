@@ -9,9 +9,10 @@ modulo per creare il tunnel ngrok:"pip install pyngrok" (necessita di ngrok e di
 moduli per l'IA:"pip install torch transformers accelerate" 
 (forse non sono tutti e se ad esempio non si vuole usare un IA python tenterà di importare i moduli quindi commentate le righe non necessarie)
 
-main.py:
-	'init_dolly_3b' serve per inizializzare l'IA all lanco dell'app.
-
 __init__.py:
-	'run_with_ngrok' server per creare un tunnel ngrok per accedere all sito.
+	'run_with_ngrok': server per creare un tunnel ngrok per accedere all sito.
+
+index.py:
+	'flag_dolly_3b': serve per inizializzare Dolly 3b all lancio dell'app.
+	'flag_gpt_2': serve per inizializzare GPT-2 all lancio dell'app.
 

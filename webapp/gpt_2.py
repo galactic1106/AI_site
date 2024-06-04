@@ -3,7 +3,7 @@ from aitextgen.TokenDataset import TokenDataset
 from aitextgen.tokenizers import train_tokenizer
 from aitextgen.utils import GPT2ConfigCPU
 
-def init_gpt_2():
+def flag_gpt_2():
 
     file_name = "testoAI.txt"
     print(file_name)

@@ -1,15 +1,20 @@
 from flask import Blueprint, render_template, request
 from flask import *
-from .gpt_2 import init_gpt_2, prompt_gpt_2
-from .dolly_3b import prompt_dolly_3b
+
+flag_gpt_2 = False
+flag_dolly_3b = False
+
+if flag_gpt_2:
+    from .gpt_2 import init_gpt_2, prompt_gpt_2
+
+    gpt_2_ai = init_gpt_2()
+
+if flag_dolly_3b:
+    from .dolly_3b import prompt_dolly_3b
+
+    prompt_dolly_3b("")
 
 index = Blueprint("index", __name__)
-init_gpt_2 = True
-gpt_2_ai = init_gpt_2()
-
-init_dolly_3b = False
-if init_dolly_3b:
-    prompt_dolly_3b("")
 
 
 @index.route("/")
@@ -37,11 +42,11 @@ def gpt_2():
     except:
         q_a = []
 
-    
     #    for qa in q_a:
     #        print(qa["q"])
     #        print(qa["a"])
     return render_template("gpt-2.html", q_a=q_a)
+
 
 @index.route("/guida")
 def guida():
