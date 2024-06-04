@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, request
 from flask import *
 
 flag_gpt_2 = True
-flag_dolly_3b = False
+flag_dolly_3b = True
 
 if flag_gpt_2:
     from .gpt_2 import prompt_gpt_2
@@ -11,7 +11,6 @@ if flag_gpt_2:
 
 if flag_dolly_3b:
     from .dolly_3b import prompt_dolly_3b
-
     prompt_dolly_3b("")
 
 index = Blueprint("index", __name__)

@@ -12,7 +12,7 @@ def prompt_dolly_3b(prompt):
 		Help as much as you can.
 		"""
         prompt = f"#### System: {system}\n#### User: \n{input}\n\n#### Response from Dolly-v2-3b:"
-        print(prompt)
+        #print(prompt)
         dolly_response = dolly_pipeline(prompt, max_new_tokens=500)
         return dolly_response[0]["generated_text"]
 
@@ -25,5 +25,6 @@ def prompt_dolly_3b(prompt):
     # let's prompt
     # prompt = "Why is the Sky blue?"
     response = get_completion_dolly(prompt)
-    print(response)
+    print("-" * 40 + "\nprompt: " + input)
+    print("response: " + response + "\n" + "-" * 40)
     return response
