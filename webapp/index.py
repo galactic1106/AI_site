@@ -14,6 +14,10 @@ def home():
 def gpt_2():
     return render_template("gpt-2.html")
 
+@index.route("/guida")
+def guida():
+    return render_template("guida.html")
+
 
 @index.route("/dolly-3b", methods=["GET", "POST"])
 def dolly_3b():
@@ -29,7 +33,7 @@ def dolly_3b():
 
 
     AI_response = prompt_dolly_3b(data.get("prompt"))
-    # AI_response = 'PLACEHOLDER'
+    AI_response = 'PLACEHOLDER'
     try: q_a = eval(data.get("q_a"))
     except: q_a = []
     
