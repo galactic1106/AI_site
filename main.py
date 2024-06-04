@@ -7,6 +7,4 @@ from webapp.dolly_3b import prompt_dolly_3b
 app = create_app()
 
 if __name__=='__main__':
-    init_dolly_3b=False
-    if init_dolly_3b: prompt_dolly_3b('')
     app.run()
