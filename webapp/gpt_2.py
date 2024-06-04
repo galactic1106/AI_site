@@ -3,7 +3,9 @@ from aitextgen import aitextgen
 from aitextgen.TokenDataset import TokenDataset
 from aitextgen.tokenizers import train_tokenizer
 from aitextgen.utils import GPT2ConfigCPU
+import os
 
+os.environ['USER'] = 'Modified User'
 
 def init_gpt_2():
     file_name = "./webapp/static/train_text/Answer.csv"
@@ -16,7 +18,7 @@ def init_gpt_2():
 
     ai = aitextgen(tokenizer_file=tokenizer_file, config=config)
     data = TokenDataset(file_name, tokenizer_file=tokenizer_file, block_size=64)
-    ai.train(data, batch_size=8, num_steps=10000, generate_every=1000, save_every=1000)
+    ai.train(data, batch_size=8, num_steps=30000, generate_every=3000, save_every=3000)
     return ai
 
 
