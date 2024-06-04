@@ -1,7 +1,7 @@
 from flask import Blueprint, render_template, request
 from flask import *
 
-flag_gpt_2 = False
+flag_gpt_2 = True
 flag_dolly_3b = False
 
 if flag_gpt_2:
