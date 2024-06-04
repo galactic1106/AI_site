@@ -7,6 +7,8 @@ flag_dolly_3b = False
 if flag_gpt_2:
     from .gpt_2 import prompt_gpt_2
 
+    prompt_gpt_2("")
+
 if flag_dolly_3b:
     from .dolly_3b import prompt_dolly_3b
 
@@ -19,9 +21,11 @@ index = Blueprint("index", __name__)
 def home():
     return render_template("index.html")
 
+
 @index.route("/guida")
 def guida():
     return render_template("guida.html")
+
 
 @index.route("/gpt-2", methods=["GET", "POST"])
 def gpt_2():
@@ -35,7 +39,7 @@ def gpt_2():
     if len(prompt.strip()) < 0:
         return render_template("gpt-2.html", q_a=q_a)
 
-    AI_response = prompt_gpt_2(data.get("prompt"))
+    AI_response = prompt_gpt_2(prompt)
     # AI_response = 'PLACEHOLDER'
     try:
         q_a = eval(data.get("q_a"))
@@ -47,8 +51,6 @@ def gpt_2():
     #        print(qa["q"])
     #        print(qa["a"])
     return render_template("gpt-2.html", q_a=q_a)
-
-
 
 
 @index.route("/dolly-3b", methods=["GET", "POST"])
@@ -63,7 +65,7 @@ def dolly_3b():
     if len(prompt.strip()) < 0:
         return render_template("dolly-3b.html", q_a=q_a)
 
-    AI_response = prompt_dolly_3b(data.get("prompt"))
+    AI_response = prompt_dolly_3b(prompt)
     try:
         q_a = eval(data.get("q_a"))
         q_a.append({"q": prompt, "a": AI_response})
