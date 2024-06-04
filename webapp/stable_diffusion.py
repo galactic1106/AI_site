@@ -1,8 +1,6 @@
 import torch
 from diffusers import StableDiffusionPipeline
-
 from PIL import Image
-
 
 def image_grid(imgs, rows, cols):
     assert len(imgs) == rows * cols

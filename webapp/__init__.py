@@ -1,11 +1,11 @@
 from flask import Flask
 from flask.templating import *
 from pyngrok import ngrok
-
+import os
 
 def create_app():
 	app = Flask(__name__)
-	run_with_ngrok=False
+	run_with_ngrok=True
 
 	if run_with_ngrok:			
 		# app.config['SECRET_KEY']=''  #chiave per la codifica dell'app
@@ -22,5 +22,8 @@ def create_app():
 	from .index import index
 
 	app.register_blueprint(index, url_prefix="/")
+
+	if not os.path.exists("./webapp/static/img/saved_img"): 
+		os.makedirs("./webapp/static/img/saved_img")
 
 	return app

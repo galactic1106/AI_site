@@ -2,9 +2,9 @@ from flask import Blueprint, render_template, request
 from flask import *
 from PIL import Image
 
-flag_gpt_2 = False
-flag_dolly_3b = False
-flag_stable_diffusion = False
+flag_gpt_2 = True
+flag_dolly_3b = True
+flag_stable_diffusion = True
 
 if flag_gpt_2:
     from .gpt_2 import prompt_gpt_2
@@ -20,6 +20,7 @@ if flag_stable_diffusion:
     from .stable_diffusion import prompt_stable_diffusion
 
     prompt_stable_diffusion("")
+
 
 index = Blueprint("index", __name__)
 
@@ -99,6 +100,6 @@ def stable_diffusion():
     image = Image.open(
         "./webapp/static/img/openart-image_Fj-iov5i_1716968070034_raw.jpg"
     )
-    path="./webapp/static/img/saved_img/"+prompt+'.png'
+    path = "./webapp/static/img/saved_img/" + prompt + ".png"
     image.save(path)
-    return render_template("stable-diffusion.html", image=prompt+'.png')
+    return render_template("stable-diffusion.html", image=prompt + ".png")
