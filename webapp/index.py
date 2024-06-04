@@ -20,8 +20,11 @@ index = Blueprint("index", __name__)
 def home():
     return render_template("index.html")
 
+@index.route("/guida")
+def guida():
+    return render_template("guida.html")
 
-@index.route("/gpt-2")
+@index.route("/gpt-2", methods=["GET", "POST"])
 def gpt_2():
     AI_response = ""
     q_a = []
@@ -47,9 +50,6 @@ def gpt_2():
     return render_template("gpt-2.html", q_a=q_a)
 
 
-@index.route("/guida")
-def guida():
-    return render_template("guida.html")
 
 
 @index.route("/dolly-3b", methods=["GET", "POST"])
@@ -76,6 +76,6 @@ def dolly_3b():
     return render_template("dolly-3b.html", q_a=q_a)
 
 
-@index.route("/stable-diffusion")
+@index.route("/stable-diffusion", methods=["GET", "POST"])
 def stable_diffusion():
     return render_template("stable-diffusion.html")

@@ -15,7 +15,7 @@ def init_gpt_2():
 
     ai = aitextgen(tokenizer_file=tokenizer_file, config=config)
     data = TokenDataset(file_name, tokenizer_file=tokenizer_file, block_size=64)
-    ai.train(data, batch_size=8, num_steps=30000, generate_every=3000, save_every=3000)
+    ai.train(data, batch_size=8, num_steps=10000, generate_every=1000, save_every=1000)
     return ai
 
 
