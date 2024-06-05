@@ -4,7 +4,7 @@ from flask.templating import *
 from pyngrok import ngrok
 import os
 
-run_with_ngrok=False
+run_with_ngrok=True
 
 dir_path=os.path.dirname(__file__)
 def create_app():

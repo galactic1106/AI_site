@@ -4,9 +4,9 @@ from PIL import Image
 import os
 
 dir_path = os.path.dirname(__file__)
-flag_gpt_2 = False
-flag_dolly_3b = False
-flag_stable_diffusion = False
+flag_gpt_2 = True
+flag_dolly_3b = True
+flag_stable_diffusion = True
 
 if flag_gpt_2:
     from .gpt_2 import prompt_gpt_2

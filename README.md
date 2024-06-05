@@ -28,3 +28,8 @@ index.py:
 	'flag_gpt_2': serve per inizializzare GPT-2 all lancio dell'app.
 	'flag_stable_diffusion': serve per inizializzare stable diffusion all lancio dell'app.
 
+
+USAGE: 
+once you have cloned the repository and installed all the modules
+set the flags to suit your needs and execute the main.py file
+
