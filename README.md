@@ -22,6 +22,7 @@ lista moduli(si installano con "pip install"):
 
 __init__.py:
 	'run_with_ngrok': server per creare un tunnel ngrok per accedere all sito.
+	(you have to add your ngrok token using: "ngrok authtoken  <your token>")
 
 index.py:
 	'flag_dolly_3b': serve per inizializzare Dolly 3b all lancio dell'app.
@@ -31,5 +32,5 @@ index.py:
 
 USAGE: 
 once you have cloned the repository and installed all the modules
-set the flags to suit your needs and execute the main.py file
+set the flags to suit your needs and execute the main.py file 
 
