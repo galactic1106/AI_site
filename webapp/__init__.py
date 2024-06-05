@@ -1,11 +1,14 @@
+from multiprocessing.spawn import import_main_path
 from flask import Flask
 from flask.templating import *
 from pyngrok import ngrok
 import os
 
+run_with_ngrok=False
+
+dir_path=os.path.dirname(__file__)
 def create_app():
 	app = Flask(__name__)
-	run_with_ngrok=True
 
 	if run_with_ngrok:			
 		# app.config['SECRET_KEY']=''  #chiave per la codifica dell'app
@@ -23,7 +26,7 @@ def create_app():
 
 	app.register_blueprint(index, url_prefix="/")
 
-	if not os.path.exists("./webapp/static/img/saved_img"): 
-		os.makedirs("./webapp/static/img/saved_img")
+	if not os.path.exists(dir_path+"/static/img/saved_img"): 
+		os.makedirs(dir_path+"/static/img/saved_img")
 
 	return app

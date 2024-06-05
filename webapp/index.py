@@ -1,10 +1,12 @@
 from flask import Blueprint, render_template, request
 from flask import *
 from PIL import Image
+import os
 
-flag_gpt_2 = True
-flag_dolly_3b = True
-flag_stable_diffusion = True
+dir_path = os.path.dirname(__file__)
+flag_gpt_2 = False
+flag_dolly_3b = False
+flag_stable_diffusion = False
 
 if flag_gpt_2:
     from .gpt_2 import prompt_gpt_2
@@ -97,8 +99,9 @@ def stable_diffusion():
 
     # /home/galactic1106/Documents/GitHub/AI_site/webapp/static/img/openart-image_Fj-iov5i_1716968070034_raw.jpg
     image = prompt_stable_diffusion(prompt=prompt)
-    #image = Image.open("./webapp/static/img/openart-image_Fj-iov5i_1716968070034_raw.jpg")
-    
-    path = "./webapp/static/img/saved_img/" + prompt + ".png"
+    # image = Image.open("./webapp/static/img/openart-image_Fj-iov5i_1716968070034_raw.jpg")
+
+    path = dir_path + "/static/img/saved_img/" + prompt + ".png"
+    print(path)
     image.save(path)
     return render_template("stable-diffusion.html", image=prompt + ".png")
