@@ -17,7 +17,7 @@ lista moduli(si installano con "pip install"):
 	scipy
 	ftfy
 
-	"jax[cuda12_local]==0.4.23" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
+	"jax[cuda12_local]==0.4.27" -f https://storage.googleapis.com/jax-releases/jax_cuda_releases.html
 
 
 __init__.py:
